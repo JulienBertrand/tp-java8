@@ -26,14 +26,10 @@ public class Stream_01_Test {
         // TODO récupérer la liste des pizzas dont le prix est >= 1300
         // TODO utiliser l'API Stream
         
-        Stream<Pizza> pizzasFiltre = pizzas.stream()
-        								   .filter(a -> a.getPrice()> 1300)
-        								   .collect(Collectors.toList())
-        
-         
+                
         
         
-        List<Pizza> result = null;
+        List<Pizza> result = pizzas.stream().filter(a -> a.getPrice()>= 1300).collect(Collectors.toList());
 
         assertThat(result, hasSize(3));
         assertThat(result, everyItem(hasProperty("price", anyOf(equalTo(1300), greaterThan(1300)))));
@@ -45,10 +41,10 @@ public class Stream_01_Test {
         List<Pizza> pizzas = new Data().getPizzas();
 
         // TODO valider si au moins une pizza à un prix >= 1300
-        Boolean result1 = null;
+        Boolean result1 = pizzas.stream().anyMatch(a -> a.getPrice() >= 1300);
 
         // TODO valider si au moins une pizza à un prix >= 2000
-        Boolean result2 = null;
+        Boolean result2 = pizzas.stream().anyMatch(a -> a.getPrice() >= 2000);
 
         assertThat(result1, is(true));
         assertThat(result2, is(false));
