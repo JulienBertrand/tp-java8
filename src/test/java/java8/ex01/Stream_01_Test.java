@@ -9,6 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
@@ -24,6 +25,14 @@ public class Stream_01_Test {
 
         // TODO récupérer la liste des pizzas dont le prix est >= 1300
         // TODO utiliser l'API Stream
+        
+        Stream<Pizza> pizzasFiltre = pizzas.stream()
+        								   .filter(a -> a.getPrice()> 1300)
+        								   .collect(Collectors.toList())
+        
+         
+        
+        
         List<Pizza> result = null;
 
         assertThat(result, hasSize(3));
