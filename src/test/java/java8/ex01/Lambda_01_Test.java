@@ -25,7 +25,7 @@ public class Lambda_01_Test {
 		// TODO implémenter la méthode de manière impérative: construire une nouvelle
 		// liste sur la base de la liste "persons".
 		// Cette liste nouvelleListe ne contient que les personnes qui passent le test
-		// suivant: predicate.test(person) == true
+		// suivant: predicate.test(person) == true.
 
 		List<Person> nouvelleListe = new ArrayList<Person>();
 		for (Person i : persons) {
